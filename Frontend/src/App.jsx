@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Auth from "./Auth";
 
-const API = "http://127.0.0.1:8000";
+const API_BASE = "https://hiresenseai.onrender.com";
 
 export default function App() {
 

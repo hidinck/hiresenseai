@@ -1,0 +1,18 @@
+John Doe
+Machine Learning Engineer
+
+Skills:
+Python, FastAPI, SQL, Pandas, NumPy, Scikit-learn, TensorFlow
+
+Experience:
+Intern - ABC Corp
+Built ML models for churn prediction.
+Created REST APIs using FastAPI.
+Deployed models on local servers.
+
+Projects:
+Resume Screening AI System
+Stock Price Prediction
+
+Education:
+B.Tech in Computer Science

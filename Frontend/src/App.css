@@ -1,0 +1,554 @@
+/* =====================================================
+   🌍 GLOBAL BASE
+===================================================== */
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #020617;
+  color: white;
+}
+
+pre {
+  background: black;
+  padding: 12px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+/* =====================================================
+   ❌ ERROR
+===================================================== */
+
+.error {
+  color: #ff6b6b;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* =====================================================
+   👑 GOD MODE DASHBOARD
+===================================================== */
+
+.god-dashboard {
+  min-height: 100vh;
+  padding: 60px 10vw;
+  background:
+    radial-gradient(circle at 30% 20%, #0ea5e944, transparent 60%),
+    linear-gradient(160deg,#020617,#0b1735,#020617);
+}
+
+/* HEADER */
+
+.god-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.god-header h1 {
+  font-size: 3.2rem;
+  background: linear-gradient(90deg,#00ffd5,#ffd700,#3b82f6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* LOGOUT */
+
+.logout-btn {
+  background: linear-gradient(135deg,#22d3ee,#3b82f6);
+  border-radius: 999px;
+  padding: 12px 30px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 35px rgba(56,189,248,.6);
+}
+
+.logout-btn:hover {
+  transform: scale(1.07);
+}
+
+/* =====================================================
+   📦 ULTRA PANELS
+===================================================== */
+
+.ultra-panel {
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(28px);
+  border-radius: 28px;
+  padding: 38px;
+  margin-bottom: 45px;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.8),
+    inset 0 0 0 1px rgba(255,255,255,.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.ultra-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(120deg,
+      transparent,
+      rgba(0,255,255,.15),
+      transparent);
+  animation: panelGlow 9s linear infinite;
+}
+
+@keyframes panelGlow {
+  to { transform: translateX(120%); }
+}
+
+.ultra-panel h2 {
+  margin-bottom: 22px;
+  font-size: 1.9rem;
+}
+
+/* PANEL ROW */
+
+.panel-row {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* CENTER */
+
+.center {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* =====================================================
+   💎 NEON RESUME CARDS  (REPLACED .card)
+===================================================== */
+
+.card {
+  background: rgba(20,40,80,.6);
+  backdrop-filter: blur(18px);
+  border-radius: 24px;
+  padding: 34px;
+  margin-bottom: 32px;
+
+  box-shadow:
+    0 0 35px rgba(0,200,255,.25),
+    inset 0 0 0 1px rgba(255,255,255,.08);
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 65px rgba(0,255,255,.45);
+}
+
+/* =====================================================
+   🧠 MATCH / RANK ROWS
+===================================================== */
+
+.glass-row {
+  background: rgba(255,255,255,.04);
+  padding: 22px;
+  border-radius: 18px;
+  margin-top: 20px;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.08);
+}
+
+.ai-text {
+  color: #ffd479;
+}
+
+/* =====================================================
+   🚀 BUTTON GOD MODE
+===================================================== */
+
+button {
+  background: linear-gradient(135deg,#3ee7ff,#3b82f6);
+  border: none;
+  padding: 14px 30px;
+  border-radius: 18px;
+  font-weight: bold;
+  cursor: pointer;
+
+  box-shadow:
+    0 0 40px rgba(62,231,255,.6),
+    inset 0 0 0 1px rgba(255,255,255,.2);
+
+  transition: .25s;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+button:active,
+button:focus {
+  background: linear-gradient(135deg,#3ee7ff,#3b82f6);
+  outline: none;
+}
+
+/* =====================================================
+   📂 FILE INPUT
+===================================================== */
+
+input[type=file] {
+  background: rgba(255,255,255,.08);
+  padding: 10px;
+  border-radius: 12px;
+  color: white;
+}
+
+/* =====================================================
+   🎬 DASHBOARD ENTRANCE
+===================================================== */
+
+.god-dashboard {
+  animation: dashReveal 1.3s ease forwards;
+}
+
+@keyframes dashReveal {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =====================================================
+   📱 MOBILE FIX
+===================================================== */
+
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+/* ============================
+   🚨 EMERGENCY VISIBILITY FIX
+============================ */
+
+#root {
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+}
+
+.god-dashboard {
+  position: relative !important;
+  z-index: 20 !important;
+  min-height: 100vh;
+  padding: 80px 8vw;
+  display: block;
+}
+
+/* FORCE DASHBOARD ABOVE FX */
+
+.god-dashboard *,
+.god-header,
+.ultra-panel {
+  position: relative;
+  z-index: 30;
+}
+
+/* HIDE AUTH FX WHEN LOGGED IN */
+
+.fx-layer,
+.orbs,
+.gradient-waves,
+#particles {
+  display: none !important;
+}
+/* ======================
+   🤖 AI PROGRESS BAR
+====================== */
+
+.ai-progress {
+  margin-top: 14px;
+}
+
+.ai-progress-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#22ffc9,#3b82f6);
+  box-shadow: 0 0 25px rgba(34,255,201,.6);
+  transition: width .4s ease;
+}
+
+.ai-progress p {
+  margin-top: 6px;
+  font-size: .9rem;
+  opacity: .8;
+}
+
+/* ======================
+   ✅ CHECKMARK
+====================== */
+
+.ai-check {
+  margin-top: 14px;
+  font-weight: bold;
+  color: #22ffc9;
+  animation: pop .6s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(.6); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+/* ==========================
+   🤖 AI EXPLANATION BOX
+========================== */
+
+.ai-box {
+  margin-top: 14px;
+  padding: 18px 22px;
+  border-radius: 18px;
+
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.08);
+
+  box-shadow:
+    inset 0 0 25px rgba(0,255,200,.08);
+
+  animation: fadeIn .6s ease;
+}
+
+.ai-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #7dd3fc;
+}
+
+/* Sections */
+
+.ai-section {
+  margin-top: 10px;
+}
+
+.ai-good {
+  color: #22ffc9;
+  font-weight: 600;
+}
+
+.ai-bad {
+  color: #ff8a8a;
+  font-weight: 600;
+}
+
+/* Skill Pills */
+
+.ai-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.ai-tag {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.ai-tag.good {
+  background: rgba(34,255,201,.18);
+  color: #22ffc9;
+  border: 1px solid rgba(34,255,201,.4);
+}
+
+.ai-tag.bad {
+  background: rgba(255,90,90,.18);
+  color: #ff9b9b;
+  border: 1px solid rgba(255,90,90,.35);
+}
+
+/* Verdict */
+
+.ai-verdict {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(255,255,255,.15);
+
+  font-size: .9rem;
+  opacity: .85;
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+/* ============================
+   🏆 PRO RANKING DASHBOARD
+============================ */
+
+.leaderboard-panel {
+  margin-top: 40px;
+}
+
+.leaderboard-title {
+  font-size: 2rem;
+  margin-bottom: 26px;
+}
+
+/* Card */
+
+.rank-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 26px 32px;
+  border-radius: 26px;
+
+  margin-top: 20px;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,.06),
+    rgba(0,0,0,.35)
+  );
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.7),
+    inset 0 0 0 1px rgba(255,255,255,.05);
+
+  transition: .4s ease;
+}
+
+.rank-card:hover {
+  transform: scale(1.015);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.9);
+}
+
+/* Left */
+
+.rank-left {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.rank-badge {
+  font-size: 2.2rem;
+  font-weight: bold;
+
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+
+  background: rgba(255,255,255,.08);
+  box-shadow: inset 0 0 15px rgba(255,255,255,.25);
+}
+
+.rank-name {
+  font-size: 1.2rem;
+}
+
+/* Fit Tags */
+
+.fit-tag {
+  margin-top: 6px;
+  display: inline-block;
+
+  padding: 6px 14px;
+  border-radius: 999px;
+
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.fit-strongfit {
+  background: rgba(34,255,201,.25);
+  color: #22ffc9;
+}
+
+.fit-moderatefit {
+  background: rgba(255,204,0,.25);
+  color: #ffcc00;
+}
+
+.fit-lowfit {
+  background: rgba(255,90,90,.25);
+  color: #ff8a8a;
+}
+
+/* Right */
+
+.rank-right {
+  width: 40%;
+}
+
+.score-bar-wrap {
+  height: 12px;
+  background: rgba(255,255,255,.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.score-bar {
+  height: 100%;
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    #22ffc9,
+    #3b82f6
+  );
+
+  box-shadow: 0 0 25px rgba(34,255,201,.6);
+
+  animation: fillScore 1.2s ease;
+}
+
+@keyframes fillScore {
+  from { width: 0; }
+}
+
+.rank-score {
+  margin-top: 8px;
+  text-align: right;
+  font-weight: bold;
+}
+
+/* TOP 3 GLOW */
+
+.rank-1 {
+  border: 1px solid rgba(255,215,0,.45);
+  box-shadow:
+    0 0 40px rgba(255,215,0,.35),
+    0 30px 90px rgba(0,0,0,.9);
+}
+
+.rank-2 {
+  border: 1px solid rgba(180,200,255,.35);
+}
+
+.rank-3 {
+  border: 1px solid rgba(255,160,90,.35);
+}

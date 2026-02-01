@@ -1,0 +1,18 @@
+Sarah Khan
+Backend Engineer
+
+Skills:
+Python, Django, Flask, AWS, Docker, Kubernetes, PostgreSQL
+
+Experience:
+Backend Developer Intern - CloudWorks
+Designed microservices.
+Deployed containers to AWS ECS.
+Built REST APIs.
+
+Projects:
+Cloud Expense Tracker
+DevOps Automation Dashboard
+
+Education:
+B.Tech in Information Technology

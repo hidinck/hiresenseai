@@ -1,0 +1,11 @@
+We are hiring a Machine Learning Engineer.
+
+Skills required:
+Python
+Deep Learning
+FastAPI
+SQL
+NLP
+Docker
+
+Experience with AWS is a plus.

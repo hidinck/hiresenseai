@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+
+/* ===============================
+   🌑 ROOT LOGIN SCENE
+================================ */
+
+.auth-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background:
+    radial-gradient(circle at 50% 30%, rgba(0,255,200,.08), transparent 60%),
+    radial-gradient(circle at 20% 80%, rgba(0,120,255,.12), transparent 55%),
+    linear-gradient(180deg, #000000, #030712, #000000);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+
+  isolation: isolate; /* prevents overlay bugs */
+}
+
+/* ===============================
+   🕶 GRID DEPTH FLOOR
+================================ */
+
+.auth-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,.02) 0px,
+      rgba(255,255,255,.02) 1px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,.02) 0px,
+      rgba(255,255,255,.02) 1px,
+      transparent 60px
+    );
+
+  transform: perspective(1200px) rotateX(60deg) translateY(200px);
+  opacity: .25;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===============================
+   ✨ GLOW HALO
+================================ */
+
+.auth-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+
+  background:
+    radial-gradient(circle at 50% 40%, rgba(0,255,200,.12), transparent 65%),
+    radial-gradient(circle at 60% 60%, rgba(0,120,255,.18), transparent 60%);
+
+  filter: blur(80px);
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ===============================
+   🚫 DISABLE OLD FX LAYERS
+================================ */
+
+.fx-layer,
+.gradient-waves,
+.orbs,
+#particles {
+  display: none !important;
+}
+
+/* ===============================
+   🎭 STAGE
+================================ */
+
+.auth-stage {
+  position: relative;
+  z-index: 20;
+}
+
+/* ===============================
+   💳 CARD
+================================ */
+
+.auth-card {
+  position: relative;
+  z-index: 25;
+
+  width: 390px;
+  padding: 44px;
+
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(22px);
+
+  border-radius: 26px;
+
+  box-shadow:
+    0 40px 120px rgba(0,0,0,.95),
+    0 0 60px rgba(0,255,200,.15),
+    inset 0 0 40px rgba(255,255,255,.04);
+
+  transform-style: preserve-3d;
+  transition: transform .35s ease;
+}
+
+.auth-card.cinematic:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* ===============================
+   🧠 TEXT
+================================ */
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+
+  background: linear-gradient(90deg,#22ffc9,#3b82f6);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  text-align: center;
+  opacity: .75;
+  margin-bottom: 26px;
+}
+
+/* ===============================
+   ⌨ INPUTS (CLICK SAFE)
+================================ */
+
+.auth-card input {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 14px;
+
+  border-radius: 14px;
+  border: none;
+  outline: none;
+
+  background: rgba(255,255,255,.1);
+  color: white;
+
+  position: relative;
+  z-index: 40;
+}
+
+.auth-card input::placeholder {
+  color: #cbd5f5;
+}
+
+/* ===============================
+   🚀 BUTTON
+================================ */
+
+.auth-btn {
+  width: 100%;
+  margin-top: 12px;
+
+  padding: 15px;
+  border-radius: 16px;
+
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg,#22c55e,#3b82f6);
+  color: white;
+  font-weight: 600;
+
+  box-shadow:
+    0 20px 40px rgba(34,197,94,.4);
+
+  transition: .25s;
+
+  position: relative;
+  z-index: 40;
+}
+
+.auth-btn:hover {
+  transform: scale(1.04);
+}
+
+/* ===============================
+   🔁 SWITCH
+================================ */
+
+.switch {
+  margin-top: 18px;
+  text-align: center;
+  cursor: pointer;
+  color: #93c5fd;
+
+  position: relative;
+  z-index: 40;
+}
+
+/* ===============================
+   🚨 ERROR
+================================ */
+
+.auth-error {
+  background: rgba(239,68,68,.15);
+  border: 1px solid rgba(239,68,68,.3);
+  color: #fecaca;
+
+  padding: 10px;
+  border-radius: 10px;
+
+  margin-bottom: 12px;
+  text-align: center;
+}

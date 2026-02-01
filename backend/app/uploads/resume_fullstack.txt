@@ -1,0 +1,18 @@
+Rohit Sharma
+Full Stack Developer
+
+Skills:
+JavaScript, React, Node.js, MongoDB, SQL, Python, FastAPI
+
+Experience:
+Frontend Engineer Intern - Webify
+Created dashboards.
+Integrated REST APIs.
+Improved UI performance.
+
+Projects:
+E-commerce Platform
+Job Portal Website
+
+Education:
+B.Tech in Software Engineering

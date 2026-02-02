@@ -107,7 +107,7 @@ export default function App() {
       const formData = new FormData();
       resumeFiles.forEach((f) => formData.append("files", f));
 
-      const res = await fetch(`${API}/ingest/resume`, {
+      const res = await fetch(`${API_BASE}/ingest/resume`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
@@ -161,7 +161,7 @@ export default function App() {
       const formData = new FormData();
       formData.append("file", jdFile);
 
-      const res = await fetch(`${API}/ingest/jd`, {
+      const res = await fetch(`${API_BASE}/ingest/jd`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
@@ -195,7 +195,7 @@ export default function App() {
     const results = [];
 
     for (const resume of resumeResult) {
-      const res = await fetch(`${API}/ingest/match`, {
+      const res = await fetch(`${API_BASE}/ingest/match`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -229,7 +229,7 @@ export default function App() {
     if (!resumeResult.length || !jdResult?.skills)
       return alert("Upload BOTH resume & JD first!");
 
-    const res = await fetch(`${API}/ingest/rank`, {
+    const res = await fetch(`${API_BASE}/ingest/rank`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
